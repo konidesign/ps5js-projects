@@ -1,1 +1,111 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>p5.js Portfolio Grid</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+      padding: 10px;
+    }
+    .sketch-thumb {
+      aspect-ratio: 1;
+      background: #222;
+      position: relative;
+      cursor: pointer;
+    }
+    #overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    #overlay canvas {
+      width: 80vw;
+      height: 80vh;
+    }
+    #overlayClose {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid" id="grid"></div>
+  <div id="overlay">
+    <div id="overlayClose">&times;</div>
+    <div id="fullCanvas"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script>
+    const sketches = [];
+
+    for (let i = 0; i < 20; i++) {
+      sketches.push(function(p) {
+        let angle = 0;
+        p.setup = () => {
+          p.createCanvas(150, 150);
+        };
+        p.draw = () => {
+          p.background(255 * Math.sin(angle + i));
+          p.fill(255 - (i * 10) % 255, 100, 200);
+          p.ellipse(p.width / 2, p.height / 2, 30 + 10 * Math.sin(angle));
+          angle += 0.05;
+        };
+      });
+    }
+
+    const grid = document.getElementById("grid");
+
+    sketches.forEach((s, index) => {
+      const container = document.createElement("div");
+      container.classList.add("sketch-thumb");
+      container.dataset.index = index;
+      grid.appendChild(container);
+      new p5(s, container);
+
+      container.addEventListener("click", () => {
+        showOverlay(sketches[index]);
+      });
+    });
+
+    function showOverlay(sketch) {
+      const overlay = document.getElementById("overlay");
+      const fullCanvas = document.getElementById("fullCanvas");
+      fullCanvas.innerHTML = "";
+      new p5((p) => {
+        sketch(p);
+        const oldSetup = p.setup;
+        p.setup = () => {
+          p.createCanvas(p.windowWidth * 0.8, p.windowHeight * 0.8);
+          if (oldSetup) oldSetup();
+        };
+      }, fullCanvas);
+      overlay.style.display = "flex";
+    }
+
+    document.getElementById("overlayClose").onclick = () => {
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("fullCanvas").innerHTML = "";
+    };
+  </script>
+</body>
+</html>
