@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+    </main>
+    <script src="sketch.js"></script>
+    <div id="pagenav">
+      <link rel="stylesheet" href="../nav.css">
+      <a href="../index.html">home</a>
+      <script>
+        function pageInIframe() {
+          return window.self !== window.top;
+        }
+      
+        // Si on est dans une iframe, on cache la navigation
+        if (pageInIframe()) {
+          document.addEventListener("DOMContentLoaded", () => {
+            const nav = document.getElementById("pagenav");
+            if (nav) nav.style.display = "none";
+          });
+        }
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+#pagenav {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.6); /* noir transparent */
+    padding: 0.6rem 1.2rem;
+    z-index: 99999;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  #pagenav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+  }
+  
+  #pagenav a {
+    color: white;
+    text-decoration: none;
+  }

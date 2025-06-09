@@ -1,0 +1,111 @@
+/* Import Google Font (à ajouter dans index.html également) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #000000;
+  padding: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.1rem;
+  align-items: start;
+}
+
+/* Supprimer les styles de lien par défaut */
+a.tile {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Tuile carrée */
+.tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0px;
+  background: #ffffff;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sketch p5.js */
+.tile iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+  object-fit: cover;
+  flex-grow: 1;
+  transition: filter 0.3s ease;
+}
+
+/* Bloc titre + description sous l’iframe */
+.overlay {
+  padding: 0.8rem;
+  background: white;
+  transition: opacity 0.2s ease;
+  text-align: center;
+  opacity: 0;
+  min-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Afficher uniquement au hover */
+.tile:hover .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* Typographie des titres */
+.overlay {
+  padding: 0.8rem;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  opacity: 0;
+  min-height: 3.5rem;
+  pointer-events: none;
+  color: white;
+  position: absolute;
+  width: 100%;
+}
+
+/* Au hover : afficher */
+.tile:hover .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.intro h1 {
+  font-family: 'Akira Expanded', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.intro p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #ffffff;
+} 
+
+

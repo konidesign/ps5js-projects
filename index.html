@@ -1,111 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>p5.js Portfolio Grid</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #111;
-      color: white;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 10px;
-      padding: 10px;
-    }
-    .sketch-thumb {
-      aspect-ratio: 1;
-      background: #222;
-      position: relative;
-      cursor: pointer;
-    }
-    #overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-    }
-    #overlay canvas {
-      width: 80vw;
-      height: 80vh;
-    }
-    #overlayClose {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>p5.js Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Akira+Expanded&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <div class="grid" id="grid"></div>
-  <div id="overlay">
-    <div id="overlayClose">&times;</div>
-    <div id="fullCanvas"></div>
+  <header class="intro">
+    <h1>Exploration creative avec p5.js</h1>
+    <p>Une série d’expérimentations graphiques,</p>
+    <p>explorant l’interaction, le mouvement et la composition à travers le code.</p>
+  </header>
+<div class="gallery">
+
+    <a href="happy_accident_2025_06_03_08_06_27/index.html" class="tile">
+      <div class="overlay">
+        <h2>1. Happy Accident</h2>
+      </div>
+      <iframe src="happy_accident_2025_06_03_08_06_27/index.html"></iframe>
+    </a>
+  
+    <a href="Spirale_hypnotique_2025_06_03_08_16_26/index.html" class="tile">
+      <div class="overlay">
+        <h2>2. Spirale Hypnotique</h2>
+      </div>
+      <iframe src="Spirale_hypnotique_2025_06_03_08_16_26/index.html"></iframe>
+    </a>
+  
+    <a href="Systeme_pas_solaire_2025_06_03_08_16_32/index.html" class="tile">
+      <div class="overlay">
+        <h2>3. Système pas solaire</h2>
+      </div>
+      <iframe src="Systeme_pas_solaire_2025_06_03_08_16_32/index.html"></iframe>
+    </a>
+  
+    <a href="Picasso_Simulator_2025_06_03_08_16_27/index.html" class="tile">
+      <div class="overlay">
+        <h2>4. Picasso Simulator</h2>
+      </div>
+      <iframe src="Picasso_Simulator_2025_06_03_08_16_27/index.html"></iframe>
+    </a>
+  
+    <a href="BAAAAAALLLS_2025_06_03_08_16_30/index.html" class="tile">
+      <div class="overlay">
+        <h2>5. BAAAAALLLS</h2>
+      </div>
+      <iframe src="BAAAAAALLLS_2025_06_03_08_16_30/index.html"></iframe>
+    </a>
+  
+    <a href="La_grande_saucisse_2025_06_03_08_16_33/index.html" class="tile">
+      <div class="overlay">
+        <h2>6. La grande saucisse</h2>
+      </div>
+      <iframe src="La_grande_saucisse_2025_06_03_08_16_33/index.html"></iframe>
+    </a>
+
+    <a href="ecailles_de_poissons_2025_06_03_08_16_59/index.html" class="tile">
+      <div class="overlay">
+        <h2>7. Écailles de poissons</h2>
+      </div>
+      <iframe src="ecailles_de_poissons_2025_06_03_08_16_59/index.html"></iframe>
+    </a>
+
+    <a href="LaGrillePulsasive_2025_06_03_08_16_57/index.html" class="tile">
+      <div class="overlay">
+        <h2>8. La Grille Pulsasive</h2>
+      </div>
+      <iframe src="LaGrillePulsasive_2025_06_03_08_16_57/index.html"></iframe>
+    </a>
+  
+    <a href="Le_Carre_Rebondisseur_2025_06_03_08_16_38/index.html" class="tile">
+      <div class="overlay">
+        <h2>9. Le Carré Rebondisseur</h2>
+      </div>
+      <iframe src="Le_Carre_Rebondisseur_2025_06_03_08_16_38/index.html"></iframe>
+    </a>
+  
+    <a href="Le_Carre_Flasheur_2025_06_03_08_16_40/index.html" class="tile">
+      <div class="overlay">
+        <h2>10. Le Carré Flasheur</h2>
+      </div>
+      <iframe src="Le_Carre_Flasheur_2025_06_03_08_16_40/index.html"></iframe>
+    </a>
+  
+    <a href="Le_Carre_Flasheur_Colors_2025_06_03_08_16_42/index.html" class="tile">
+      <div class="overlay">
+        <h2>11. Le Carré Flasheur Colors</h2>
+      </div>
+      <iframe src="Le_Carre_Flasheur_Colors_2025_06_03_08_16_42/index.html"></iframe>
+    </a>
+  
+    <a href="sympa....._2025_06_03_08_16_44/index.html" class="tile">
+      <div class="overlay">
+        <h2>12. C’est sympa…</h2>
+      </div>
+      <iframe src="sympa....._2025_06_03_08_16_44/index.html"></iframe>
+    </a>
+  
+    <!-- Sketch dangereux : click only -->
+    <div class="tile" onclick="window.open('plus_rigolo_2025_06_03_08_16_49/index.html', '_blank')">
+      <div class="overlay">
+        <h2>13. C’est plus rigolo :)</h2>
+      </div>
+      <div>
+        Cliquer pour voir (attention crash complet du site)
+      </div>
+    </div>
+  
+    <a href="des_mots_et_des_mots_et_un_rond_2025_06_03_08_17_01/index.html" class="tile">
+      <div class="overlay">
+        <h2>14. Des mots et un rond</h2>
+      </div>
+      <iframe src="des_mots_et_des_mots_et_un_rond_2025_06_03_08_17_01/index.html"></iframe>
+    </a>
+  
+    <a href="un_mot_et_un_mot_et_un_mot_et_un_mo_2025_06_03_08_17_05/index.html" class="tile">
+      <div class="overlay">
+        <h2>15. Un mot et un mot…</h2>
+      </div>
+      <iframe src="un_mot_et_un_mot_et_un_mot_et_un_mo_2025_06_03_08_17_05/index.html"></iframe>
+    </a>
+  
+    <div class="tile" onclick="window.open('Gagougoguaguaugagagoguaiaopgiaog_2025_06_03_08_17_13/index.html', '_blank')">
+      <div class="overlay">
+        <h2>16. Gagou</h2>
+      </div>
+      <div>
+        Cliquer 2 fois
+      </div>
+    </div>
+    
+    <a href="MIAOU_2025_06_03_08_17_30/index.html" class="tile">
+      <div class="overlay">
+        <h2>17. MIAOU</h2>
+      </div>
+      <iframe src="MIAOU_2025_06_03_08_17_30/index.html"></iframe>
+    </a>
+  
+    <a href="TABLEAU_BEZIER_2025_06_03_08_17_17/index.html" class="tile">
+      <div class="overlay">
+        <h2>18. TABLEAU BEZIER</h2>
+      </div>
+      <iframe src="TABLEAU_BEZIER_2025_06_03_08_17_17/index.html"></iframe>
+    </a>
+  
+    <a href="EXPLOSION_DE_COULEURS_2025_06_03_08_17_21/index.html" class="tile">
+      <div class="overlay">
+        <h2>19. Explosion de couleurs</h2>
+      </div>
+      <iframe src="EXPLOSION_DE_COULEURS_2025_06_03_08_17_21/index.html"></iframe>
+    </a>
+  
+    <a href="ME_LOVE_MOSAIC_WEBCAM_2025_06_03_08_17_22/index.html" class="tile">
+      <div class="overlay">
+        <h2>20. ME LOVE MOSAIC WEBCAM</h2>
+      </div>
+      <iframe src="ME_LOVE_MOSAIC_WEBCAM_2025_06_03_08_17_22/index.html"></iframe>
+    </a>
+  
+    <a href="ME_LOVE_MOSAIC_WEBCAM_+_DELAY_2025_06_03_08_17_25/index.html" class="tile">
+      <div class="overlay">
+        <h2>21. ME LOVE MOSAIC + DELAY</h2>
+      </div>
+      <iframe src="ME_LOVE_MOSAIC_WEBCAM_+_DELAY_2025_06_03_08_17_25/index.html"></iframe>
+    </a>
+
+    <a href="PACMAN_2025_06_03_08_17_27/index.html" class="tile">
+      <div class="overlay">
+        <h2>22. PACMAN</h2>
+      </div>
+      <iframe src="PACMAN_2025_06_03_08_17_27/index.html"></iframe>
+    </a>
+  
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-  <script>
-    const sketches = [];
-
-    for (let i = 0; i < 20; i++) {
-      sketches.push(function(p) {
-        let angle = 0;
-        p.setup = () => {
-          p.createCanvas(150, 150);
-        };
-        p.draw = () => {
-          p.background(255 * Math.sin(angle + i));
-          p.fill(255 - (i * 10) % 255, 100, 200);
-          p.ellipse(p.width / 2, p.height / 2, 30 + 10 * Math.sin(angle));
-          angle += 0.05;
-        };
-      });
-    }
-
-    const grid = document.getElementById("grid");
-
-    sketches.forEach((s, index) => {
-      const container = document.createElement("div");
-      container.classList.add("sketch-thumb");
-      container.dataset.index = index;
-      grid.appendChild(container);
-      new p5(s, container);
-
-      container.addEventListener("click", () => {
-        showOverlay(sketches[index]);
-      });
-    });
-
-    function showOverlay(sketch) {
-      const overlay = document.getElementById("overlay");
-      const fullCanvas = document.getElementById("fullCanvas");
-      fullCanvas.innerHTML = "";
-      new p5((p) => {
-        sketch(p);
-        const oldSetup = p.setup;
-        p.setup = () => {
-          p.createCanvas(p.windowWidth * 0.8, p.windowHeight * 0.8);
-          if (oldSetup) oldSetup();
-        };
-      }, fullCanvas);
-      overlay.style.display = "flex";
-    }
-
-    document.getElementById("overlayClose").onclick = () => {
-      document.getElementById("overlay").style.display = "none";
-      document.getElementById("fullCanvas").innerHTML = "";
-    };
-  </script>
-</body>
-</html>
